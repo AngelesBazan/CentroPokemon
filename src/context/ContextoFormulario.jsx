@@ -23,10 +23,10 @@ const FormContextProvider = ({children}) => {
     }
 
     const reducer = (state, action) => {
-        switch(action.type) { // porque sería el payload y entra a la propiedad type (es buena práctica pero podría llamarse "maria :v")
-            case ACTUALIZAR_ENTRENADOR: // Un caso para cada acción
-                return { // state porque es el que va por parámetro
-                    ...state, entrenador: {...state.entrenador, [action.payload.clave]: action.payload.valor} // del payload voy a extraer "clave" y "valor"
+        switch(action.type) {
+            case ACTUALIZAR_ENTRENADOR:
+                return {
+                    ...state, entrenador: {...state.entrenador, [action.payload.clave]: action.payload.valor}
                     
                     // equivale a = setUser({...user, [clave]: valor});
                 }
@@ -41,17 +41,7 @@ const FormContextProvider = ({children}) => {
         }
     }
 
-    /* const agregarUsuario = (clave, valor) => {
-        setUser({...user, [clave]: valor});
-        //const temporal = user;
-        //temporal.push(user);
-        //setUser(temporal);
-    }; */
-
-
     const [state, dispatch] = useReducer(reducer, initialState);
-    // esto lo voy a disponibilizar en el provider para que sea accesible en todo el contexto
-    // state es initialState y dispatch es la función reducer que tiene el switch
 
     return(
         <FormContext.Provider value={{ state, dispatch }}>
@@ -62,10 +52,3 @@ const FormContextProvider = ({children}) => {
 }
 
 export default FormContextProvider;
-    
-/* const eliminarUsuario = (id) => {
-    const restoDeUsuarios = user.filter(
-        user => user.id !== id
-    );
-    setUser(restoDeUsuarios);
-}; */

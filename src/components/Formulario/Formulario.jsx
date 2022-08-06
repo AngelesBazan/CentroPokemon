@@ -7,11 +7,6 @@ import Input from "../Input/Input";
 import Detalle from "./Detalle";
 import { ACTUALIZAR_ENTRENADOR, ACTUALIZAR_POKEMON } from "../../context/actions";
 
-// En este componente tenemos nuestro formulario y dentro de él
-// tenemos los componentes que necesitan consumir nuestro estado.
-// Recuerda cual es el paso que debemos tomar para que nuestros
-// componentes puedan consumir un estado global.
-
 const Formulario = () => {
   return (
     <>
@@ -37,8 +32,6 @@ const Formulario = () => {
                 <img src={entrenador} alt="entrenador" />
                 <span>ENTRENADOR</span>
               </p>
-              
-              {/* Acá le agrego la prop */}
               <Input name="nombre" label="Nombre" accion={ACTUALIZAR_ENTRENADOR}/>
               <Input name="apellido" label="Apellido" accion={ACTUALIZAR_ENTRENADOR}/>
               <Input name="email" label="Email" type="email" accion={ACTUALIZAR_ENTRENADOR}/>
