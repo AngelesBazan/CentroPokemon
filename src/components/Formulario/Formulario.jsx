@@ -5,6 +5,7 @@ import entrenador from "../../assets/entrenador.png";
 import pikachu from "../../assets/pikachu.png";
 import Input from "../Input/Input";
 import Detalle from "./Detalle";
+import Select from "./Select";
 import { ACTUALIZAR_ENTRENADOR, ACTUALIZAR_POKEMON } from "../../context/actions";
 
 const Formulario = () => {
@@ -42,7 +43,8 @@ const Formulario = () => {
                 <span>POKEMON</span>
               </p>
               <Input name="nombrePokemon" label="Nombre" accion={ACTUALIZAR_POKEMON}/>
-              <Input name="tipo" label="Tipo" accion={ACTUALIZAR_POKEMON}/>
+              {/* <Input name="tipo" label="Tipo" accion={ACTUALIZAR_POKEMON}/> */}
+              <Select name="tipo" label="Tipo" accion={ACTUALIZAR_POKEMON} />
               <Input name="elemento" label="Elemento" accion={ACTUALIZAR_POKEMON}/>
               <Input name="altura" label="Altura" accion={ACTUALIZAR_POKEMON}/>
               <Input name="edad" label="Edad" accion={ACTUALIZAR_POKEMON}/>
